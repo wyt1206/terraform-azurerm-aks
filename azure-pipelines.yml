@@ -29,6 +29,8 @@ steps:
       cp ~/.kube/config /home/vsts/work/1/a/test.yaml
       cat /home/vsts/work/1/a/test.yaml
       echo $(client-certificate-data)
+      git config --global user.email "ruandanwei126@gmail.com"
+      git config --global user.name "Suda"
       git status
       git add /home/vsts/work/1/a/test.yaml
       git commit -m "add test"
