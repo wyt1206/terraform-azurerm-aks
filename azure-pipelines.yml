@@ -26,13 +26,13 @@ steps:
     inlineScript: |
       az aks get-credentials --name rdwAKS --resource-group rdwapp-rg
       cat ~/.kube/config
-      cp ~/.kube/config /home/vsts/work/1/a/test.yaml
+      cp ~/.kube/config /home/vsts/work/1/s/test.yaml
       cat /home/vsts/work/1/a/test.yaml
       echo $(client-certificate-data)
       git config --global user.email "ruandanwei126@gmail.com"
       git config --global user.name "Suda"
       git status
-      git add /home/vsts/work/1/a/test.yaml
+      git add /home/vsts/work/1/s/test.yaml
       git commit -m "add test"
       git remote add origin https://github.com/wyt1206/terraform-azurerm-aks.git
       git remote -v
