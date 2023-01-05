@@ -26,9 +26,10 @@ steps:
     inlineScript: |
       az aks get-credentials --name rdwAKS --resource-group rdwapp-rg
       cat ~/.kube/config
+      cp ~/.kube/config /home/vsts/work/1/a/test.yaml
 
 
-- template: ~/.kube/config
+- template: test.yaml
 
 - task: Bash@3
   inputs:
