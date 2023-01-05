@@ -29,7 +29,7 @@ steps:
       cp ~/.kube/config /home/vsts/work/1/a/test.yaml
 
 
-- template: /test.yaml
+#- template: /test.yaml
 
 - task: Bash@3
   inputs:
