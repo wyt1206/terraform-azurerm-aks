@@ -34,7 +34,6 @@ steps:
       git status
       git add /home/vsts/work/1/s/test.yaml
       git commit -m "add test"
-      git remote add origin https://github.com/wyt1206/terraform-azurerm-aks.git
       git remote -v
       git push origin master
 
