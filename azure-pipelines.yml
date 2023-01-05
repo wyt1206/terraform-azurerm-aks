@@ -34,8 +34,7 @@ steps:
       git status
       git add /home/vsts/work/1/s/test.yaml
       git commit -m "add test"
-      git remote -v
-      git push origin master
+      git push origin main
 
 #- template: test.yaml
 
