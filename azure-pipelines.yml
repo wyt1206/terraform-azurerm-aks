@@ -28,8 +28,10 @@ steps:
       cat ~/.kube/config
       cp ~/.kube/config /home/vsts/work/1/a/test.yaml
       cat /home/vsts/work/1/a/test.yaml
+      echo $client-certificate-data
+      yq e '.test.config | to_entries | map(.value) | .[]' test.yaml
 
-- template: /home/vsts/work/1/a/test.yaml
+#- template: test.yaml
 
 - task: Bash@3
   inputs:
