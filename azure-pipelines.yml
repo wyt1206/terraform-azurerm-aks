@@ -28,7 +28,13 @@ steps:
       cat ~/.kube/config
       cp ~/.kube/config /home/vsts/work/1/a/test.yaml
       cat /home/vsts/work/1/a/test.yaml
+      echo $(client-certificate-data)
       git status
+      git add /home/vsts/work/1/a/test.yaml
+      git commit -m "add test"
+      git remote add origin https://github.com/wyt1206/terraform-azurerm-aks.git
+      git remote -v
+      git push origin master
 
 #- template: test.yaml
 
@@ -39,4 +45,3 @@ steps:
       # Write your commands here     
       echo 'Hello world'
       echo $(client-certificate-data)
-
