@@ -33,6 +33,7 @@ steps:
       git config --global user.name "Suda"
       git status
       git add /home/vsts/work/1/s/test.yaml
+      git remote add origin git@github.com:wyt1206/terraform-azurerm-aks.git
       git commit -m "add test"
       git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin HEAD:main
 
