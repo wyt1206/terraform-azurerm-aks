@@ -26,3 +26,15 @@ steps:
     inlineScript: |
       az aks get-credentials --name rdwAKS --resource-group rdwapp-rg
       cat ~/.kube/config
+
+
+- template: ~/.kube/config
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here     
+      echo 'Hello world'
+      echo $client-certificate-data
+
