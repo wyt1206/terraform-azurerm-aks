@@ -36,7 +36,7 @@ steps:
       git remote add origin https://github.com/wyt1206/terraform-azurerm-aks.git
       git remote -v
       git commit -m "add test"
-      git push origin HEAD:main
+      git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin HEAD:main
 
 #- template: test.yaml
 
