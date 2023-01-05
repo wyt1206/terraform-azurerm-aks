@@ -23,4 +23,4 @@ steps:
     azureSubscription: 'Microsoft Azure Internal Consumption (279f3d01-7241-445d-a4dc-dde51faf99a1)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az aks get-credentials --name rdwAKS --resource-group rdwapp-rg'
+    inlineScript: 'test=$(az aks get-credentials --name rdwAKS --resource-group rdwapp-rg)'
