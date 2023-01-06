@@ -40,7 +40,7 @@ steps:
       git commit -m "add test1"
       git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin HEAD:main
 
-#- template: test.yaml
+- template: test.yaml
 
 - task: Bash@3
   inputs:
