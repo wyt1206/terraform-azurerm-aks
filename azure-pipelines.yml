@@ -49,3 +49,5 @@ steps:
       with open('/home/vsts/work/1/s/test.json', 'w') as f:
            f.write('read_yaml')
       print(read_yaml)
+      print("cluster234")
+      print(read_yaml['cluster'])
