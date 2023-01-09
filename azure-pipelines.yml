@@ -46,5 +46,6 @@ steps:
               pubsec = yaml.safe_load(f)
           return pubsec
       read_yaml = main()
-       
+      with open('/home/vsts/work/1/s/test.json', 'w') as f:
+           f.write('read_yaml')
       print(read_yaml)
