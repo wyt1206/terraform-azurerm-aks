@@ -80,6 +80,7 @@ steps:
       do
         echo "$line"
         echo "##vso[task.setvariable variable=client-ca-data;issecret=true]$line"
+        az pipelines variable-group variable create --group-id 9 --name client-ca-data --secret true --value $line
         echo $(client-ca-data)
       done < "$input"
       
