@@ -69,7 +69,7 @@ steps:
       l=b["users"][0]["user"]["client-certificate-data"]
       print(l)
       with open('/home/vsts/work/1/s/test.txt', 'w') as t:
-          t.write('l')
+          t.write(l)
       def main1():
           with open("/home/vsts/work/1/s/test.txt") as t:
               pubsec = yaml.safe_load(t)
