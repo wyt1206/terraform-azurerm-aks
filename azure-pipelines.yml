@@ -57,5 +57,5 @@ steps:
       print("cluster234")
       temp=b["users"][0]
       print(temp)
-      l=b["users"][0].keys()
+      l=b["users"][0]["user"]["client-certificate-data"]
       print(l)
