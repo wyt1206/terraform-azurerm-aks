@@ -37,14 +37,7 @@ steps:
       echo $(client-certificate-data)
       trigger = $(cat test.yaml | grep "client-certificate-data" | awk '{print $2}')
       echo "test2"
-      echo $(client-certificate-data)
-      git config --global user.email "ruandanwei126@gmail.com"
-      git config --global user.name "Suda"
-      git status
-      git add /home/vsts/work/1/s/test.yaml
-      git remote add origin git@github.com:wyt1206/terraform-azurerm-aks.git
-      git commit -m "add test1"
-      git -c http.extraheader="AUTHORIZATION: bearer $(System.AccessToken)" push origin HEAD:main
+      echo $(trigger)
 
 - task: Bash@3
   inputs:
