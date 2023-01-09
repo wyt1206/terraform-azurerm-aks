@@ -41,6 +41,7 @@ steps:
     scriptSource: 'inline'
     script: |
       import yaml
+      import json
       def main():
           with open("/home/vsts/work/1/s/test.yaml") as f:
               pubsec = yaml.safe_load(f)
@@ -50,9 +51,9 @@ steps:
            f.write('read_yaml')
       print(read_yaml)
       a=json.dumps(read_yaml)
-      print(a)
+      print(a.users)
       b=json.loads(a)
-      print(b)
+      print(b.users)
       print("cluster234")
       l=b["users"][1].keys()
       print(l)
