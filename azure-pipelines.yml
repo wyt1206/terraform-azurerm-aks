@@ -12,8 +12,16 @@ pool:
 #variables:
 #- template: test.yaml
 
+parameters:
+- name: l
+  displayName: Run Tests?
+  type: string
+  default: null
+
 variables:
 - group: TestForCert
+- name: vcontososecret
+  value: $[variables.contososecret]
 
 steps:
 - checkout: self
@@ -61,5 +69,14 @@ steps:
       temp=b["users"][0]
       print(temp)
       l=b["users"][0]["user"]["client-certificate-data"]
-      $pipeline.variables.client-ca-data.value=l
       print(l)
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (279f3d01-7241-445d-a4dc-dde51faf99a1)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az pipelines variable-group variable create \
+          --group-id 9 --name contososecret --secret true --value $(l)
+
