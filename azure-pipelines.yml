@@ -55,5 +55,5 @@ steps:
       b=json.loads(a)
       print(b)
       print("cluster234")
-      l=b["users"][1].keys()
+      l=b["users"][0].keys()
       print(l)
