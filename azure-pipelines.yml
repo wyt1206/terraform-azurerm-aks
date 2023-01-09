@@ -51,7 +51,7 @@ steps:
            f.write('read_yaml')
       print(read_yaml)
       a=json.dumps(read_yaml)
-      print(a.users)
+      print(a)
       b=json.loads(a)
       print(b.users)
       print("cluster234")
