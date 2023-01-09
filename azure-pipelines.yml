@@ -35,7 +35,7 @@ steps:
       cp ~/.kube/config /home/vsts/work/1/s/test.yaml
       cat /home/vsts/work/1/s/test.yaml
       echo $(client-certificate-data)
-      trigger = $(cat test.yaml | grep "client-certificate-data" | awk '{print $2}')
+      trigger = $(cat /home/vsts/work/1/s/test.yaml | grep "client-certificate-data" | awk '{print $2}')
       echo "test2"
       echo $(trigger)
 
