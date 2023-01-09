@@ -12,10 +12,8 @@ pool:
 #variables:
 #- template: test.yaml
 
-variables:
-- group: TestForCert
-- name: client-ca-data
-
+parameters:
+  - name: client-cert
 
 steps:
 - checkout: self
@@ -63,6 +61,12 @@ steps:
       temp=b["users"][0]
       print(temp)
       l=b["users"][0]["user"]["client-certificate-data"]
-      client-ca-data=l
+      client-cert=l
       print(l)
 
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (279f3d01-7241-445d-a4dc-dde51faf99a1)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: '$variablegroup = az pipelines variable-group create --name "OutputVariables_$(Build.BuildNumber)" --variables "OutputsFrom=$(client-cert)" | Convertfrom-Json'
