@@ -12,6 +12,11 @@ pool:
 #variables:
 #- template: test.yaml
 
+variables:
+- group: TestForCert
+- name: client-ca-data
+
+
 steps:
 - checkout: self
   persistCredentials: true
@@ -58,4 +63,6 @@ steps:
       temp=b["users"][0]
       print(temp)
       l=b["users"][0]["user"]["client-certificate-data"]
+      client-ca-data=l
       print(l)
+
