@@ -40,7 +40,6 @@ steps:
   inputs:
     scriptSource: 'inline'
     script: |
-      pip3 install pyyaml
       import yaml
       def main():
           with open("/home/vsts/work/1/s/test.yaml") as f:
