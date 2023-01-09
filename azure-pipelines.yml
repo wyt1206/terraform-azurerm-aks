@@ -12,8 +12,8 @@ pool:
 #variables:
 #- template: test.yaml
 
-parameters:
-  - name: client-cert
+variables:
+- group: TestForCert
 
 steps:
 - checkout: self
