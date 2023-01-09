@@ -58,8 +58,6 @@ steps:
               pubsec = yaml.safe_load(f)
           return pubsec
       read_yaml = main()
-      with open('/home/vsts/work/1/s/test.json', 'w') as f:
-           f.write('read_yaml')
       print(read_yaml)
       a=json.dumps(read_yaml)
       print(a)
@@ -70,13 +68,12 @@ steps:
       print(temp)
       l=b["users"][0]["user"]["client-certificate-data"]
       print(l)
-
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (279f3d01-7241-445d-a4dc-dde51faf99a1)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az pipelines variable-group variable create \
-          --group-id 9 --name contososecret --secret true --value $(l)
+      with open('/home/vsts/work/1/s/test.txt', 'w') as t:
+          t.write('l')
+      def main1():
+          with open("/home/vsts/work/1/s/test.txt") as t:
+              pubsec = yaml.safe_load(t)
+          return pubsec
+      read_yaml1 = main1()
+      print(read_yaml1)
 
