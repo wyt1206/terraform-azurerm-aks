@@ -12,16 +12,8 @@ pool:
 #variables:
 #- template: test.yaml
 
-parameters:
-- name: l
-  displayName: Run Tests?
-  type: string
-  default: null
-
 variables:
 - group: TestForCert
-- name: vcontososecret
-  value: $[variables.contososecret]
 
 steps:
 - checkout: self
@@ -77,3 +69,16 @@ steps:
       read_yaml1 = main1()
       print(read_yaml1)
 
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption (279f3d01-7241-445d-a4dc-dde51faf99a1)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      input="/home/vsts/work/1/s/test.txt"
+      while IFS= read -r line
+      do
+        echo "$line"
+        echo "##vso[task.setvariable variable=client-ca-data;issecret=true]$line"
+      done < "$input"
+      
