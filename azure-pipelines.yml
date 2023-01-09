@@ -53,7 +53,7 @@ steps:
       a=json.dumps(read_yaml)
       print(a)
       b=json.loads(a)
-      print(b.users)
+      print(b)
       print("cluster234")
       l=b["users"][1].keys()
       print(l)
