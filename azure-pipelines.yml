@@ -49,5 +49,10 @@ steps:
       with open('/home/vsts/work/1/s/test.json', 'w') as f:
            f.write('read_yaml')
       print(read_yaml)
+      a=json.dumps(read_yaml)
+      print(a)
+      b=json.loads(a)
+      print(b)
       print("cluster234")
-      print(read_yaml['cluster'])
+      l=b["users"][1].keys()
+      print(l)
